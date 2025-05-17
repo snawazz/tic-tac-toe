@@ -1,0 +1,239 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100%;
+     background-color: #282c34;
+     color: white;
+     transition: background-color 0.7s ease;
+ }
+
+
+ body.light-theme {
+     background-color: #f4f4f9;
+     color: #333;
+ }
+
+ .navbar {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     margin-left: 50em;
+     padding: 15px;
+     text-align: center;
+     font-size: 20px;
+     z-index: 1000;
+ }
+
+ .theme-toggle {
+     cursor: pointer;
+     margin-top: 10px;
+     font-size: 1.2rem;
+     padding: 8px 13px;
+     border: none;
+     border-radius: 12px;
+     background-color: #4b4f57;
+     color: white;
+     font-size: 1rem;
+     cursor: pointer;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     transition: all 0.7s ease;
+ }
+
+ .container {
+     text-align: center;
+ }
+
+ h1 {
+     margin-bottom: 20px;
+     font-size: 2.5rem;
+     letter-spacing: 2px;
+ }
+
+ .popup {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%) scale(1);
+     background: #4b4f57;
+     color: rgb(220, 218, 218);
+     padding: 20px 30px;
+     border-radius: 12px;
+     box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+     font-size: 1.1rem;
+     z-index: 999;
+     text-align: center;
+     animation: popIn 0.4s ease forwards, pulse 1.5s ease-in-out infinite;
+ }
+
+ /* Light theme popup styles */
+ body.light-theme .popup {
+     background: #fff;
+     color: #35353597;
+     box-shadow: 0 0 25px rgba(0, 0, 255, 0.2);
+ }
+
+
+ .popup button {
+     margin-top: 12px;
+     padding: 8px 16px;
+     background-color: #f85a7a;
+     border: none;
+     color: white;
+     font-size: 1rem;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+
+ .popup button:hover {
+     background-color: #d50000;
+ }
+
+ /*  Animation */
+ @keyframes popIn {
+     0% {
+         opacity: 0;
+         transform: translate(-50%, -50%) scale(0.5);
+     }
+
+     100% {
+         opacity: 1;
+         transform: translate(-50%, -50%) scale(1);
+     }
+ }
+
+ /* Pulse animation for in-out effect */
+ @keyframes pulse {
+
+     0%,
+     100% {
+         transform: translate(-50%, -50%) scale(1);
+     }
+
+     50% {
+         transform: translate(-50%, -50%) scale(1.05);
+     }
+ }
+
+ @keyframes fadeOut {
+     to {
+         opacity: 0;
+         transform: translate(-50%, -50%) scale(0.7);
+     }
+ }
+
+ .game-mode {
+     margin-bottom: 20px;
+     font-size: 1.2rem;
+     color: inherit;
+ }
+
+ .game-mode label {
+     margin-right: 10px;
+     font-weight: bold;
+     font-size: 1.3rem;
+ }
+
+ .game-mode select {
+     padding: 8px 13px;
+     border: none;
+     border-radius: 12px;
+     background-color: #4b4f57;
+     color: white;
+     font-size: 1rem;
+     cursor: pointer;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     transition: all 0.7s ease;
+ }
+
+ body.light-theme .game-mode select {
+     background-color: #e0e0e0;
+     color: #333;
+ }
+
+ .game-mode select:hover {
+     background-color: #5c6068;
+ }
+
+ body.light-theme .game-mode select:hover {
+     background-color: #d0d0d0;
+ }
+
+ .game-board {
+     display: grid;
+     grid-template-columns: repeat(3, 120px);
+     grid-template-rows: repeat(3, 120px);
+     gap: 15px;
+     margin: 20px auto;
+ }
+
+ .cell {
+     width: 120px;
+     height: 120px;
+     background-color: #4b4f57;
+     border-radius: 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 3rem;
+     color: #fff;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     cursor: pointer;
+     transition: transform 0.3s ease, background-color 0.3s ease;
+
+ }
+
+ .light-theme .cell {
+     background-color: #e0e0e0;
+     color: #333;
+ }
+
+ .cell:hover {
+     background-color: #3a3e46;
+     transform: scale(1.1);
+ }
+
+ .light-theme .cell:hover {
+     background-color: #d0d0d0;
+ }
+
+ .cell.winning {
+     background-color: #28a745;
+ }
+
+ .message {
+     margin-top: 10px;
+     font-size: 1.5rem;
+     font-weight: bold;
+ }
+
+ .scoreboard {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 20px;
+     font-size: 1.2rem;
+ }
+
+ .reset-btn {
+     margin-top: 20px;
+     padding: 10px 20px;
+     font-size: 1.2rem;
+     background-color: #3291f7;
+     color: white;
+     border: none;
+     cursor: pointer;
+     border-radius: 5px;
+     transition: background-color 0.3s ease;
+ }
+
+ .reset-btn:hover {
+     background-color: #6c9bce;
+ }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance (Tic-Tac-Toe)</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar"><button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button></nav>
+    <div class="container">
+        <h1 id="game-title">Tic Tac Toe</h1>
+        <div id="challenge-popup" style="display: none;" class="popup">
+            <p>"Heh... 3 losses already? If you have guts... then defeat me!😈"</p>
+            <button onclick="closeChallenge()">Challenge Accepted!</button>
+        </div>
+
+        <!-- Game Mode Selection -->
+        <div class="game-mode">
+
+            <label for="mode">Select Game Mode:</label>
+            <select id="mode" onchange="resetGame()">
+                <option value="player">Player vs Player</option>
+                <option value="ai">Player vs Computer</option>
+            </select>
+
+        </div>
+
+        <div class="game-board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <p class="message" id="message">Player X's Turn</p>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div>Player X Wins: <span id="x-wins">0</span></div>
+            <div>Player O Wins: <span id="o-wins">0</span></div>
+            <div>Moves: <span id="move-count">0</span></div>
+        </div>
+
+        <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+
+    </div>
+
+    <audio id="move-sound" src="move_sound.mp3"></audio>
+    <audio id="win-sound" src="win_sound.wav"></audio>
+    <audio id="draw-sound" src="draw_sound.mp3"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
